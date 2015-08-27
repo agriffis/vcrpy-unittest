@@ -34,7 +34,7 @@ class VCRTestCase(unittest.TestCase):
             try:
                 assert not self.__context_manager, "VCR still running!"
             except AssertionError:
-                self._stop_vcr()
+                self.__stop_vcr()
                 raise
 
     def _start_vcr(self):
@@ -45,6 +45,12 @@ class VCRTestCase(unittest.TestCase):
         self.cassette = self.__context_manager.__enter__()
 
     def _stop_vcr(self):
+        # This indirection tries to ensure that a subclass can't override
+        # self._stop_vcr() and accidentally prevent self.run() from pulling the
+        # emergency brake.
+        self.__stop_vcr()
+
+    def __stop_vcr(self):
         assert self.__context_manager, "VCR already stopped."
         try:
             self.__context_manager.__exit__(None, None, None)
