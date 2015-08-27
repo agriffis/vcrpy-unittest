@@ -53,8 +53,6 @@ class VCRTestCase(unittest.TestCase):
 
     def _get_vcr_kwargs(self):
         return dict(
-            match_on=['method', 'uri', 'headers', 'raw_body'],
-            filter_headers=['authorization'],
             cassette_library_dir=self._get_cassette_library_dir(),
         )
 
