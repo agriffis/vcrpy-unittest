@@ -1,7 +1,7 @@
 vcrpy-unittest
 ==============
 
-|Build Status|
+|Build Status| |Coverage Report|
 
 This package provides ``VCRTestCase`` for simple integration between
 `VCR.py`_ and Python's venerable unittest_.
@@ -68,3 +68,4 @@ served me well for so long.
 .. _unittest: https://docs.python.org/2/library/unittest.html
 .. |Build Status| image:: https://travis-ci.org/agriffis/vcrpy-unittest.svg?branch=master
    :target: https://travis-ci.org/agriffis/vcrpy-unittest
+.. |Coverage Report| image:: https://coveralls.io/repos/agriffis/vcrpy-unittest/badge.svg?branch=master&service=github    :target: https://coveralls.io/github/agriffis/vcrpy-unittest?branch=master
