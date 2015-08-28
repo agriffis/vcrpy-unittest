@@ -6,6 +6,15 @@ vcrpy-unittest
 This package provides ``VCRTestCase`` for simple integration between
 `VCR.py`_ and Python's venerable unittest_.
 
+Installation
+------------
+
+Install from PyPI_:
+
+.. code:: sh
+
+   pip install vcrpy-unittest
+
 Usage
 -----
 
@@ -64,6 +73,7 @@ regarding unittest and context managers
 and to `@davepeck`_ for `httreplay <https://github.com/davepeck/httreplay>`__
 which served me well for so long.
 
+.. _PyPI: https://pypi.python.org/pypi/vcrpy-unittest
 .. _VCR.py: https://github.com/kevin1024/vcrpy
 .. _unittest: https://docs.python.org/2/library/unittest.html
 
