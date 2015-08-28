@@ -24,6 +24,8 @@ interactions.
 Similar to how VCR.py returns the cassette from the context manager,
 ``VCRTestCase`` makes the cassette available as ``self.cassette``:
 
+.. code:: python
+
     self.assertEqual(len(self.cassette), 1)
     self.assertEqual(self.cassette.requests[0].uri, 'http://example.com')
 
