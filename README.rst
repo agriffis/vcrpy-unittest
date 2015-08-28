@@ -57,15 +57,21 @@ This library uses the MIT license, which is the same as VCR.py. See `LICENSE.txt
 Acknowledgements
 ----------------
 
-Thanks to @kevin1024 for `VCR.py`_, and to @IvanMalison for his constructive
-critique on this package. Also thanks to @nedbat for his `post regarding
-unittest and context managers
+Thanks to `@kevin1024`_ for `VCR.py`_, and to `@IvanMalison`_ for his
+constructive critique on this package. Also thanks to `@nedbat`_ for his `post
+regarding unittest and context managers
 <http://nedbatchelder.com/blog/201508/using_context_managers_in_test_setup.html>`__,
-and to @davepeck for `httreplay <https://github.com/davepeck/httreplay>`__ which
-served me well for so long.
+and to `@davepeck`_ for `httreplay <https://github.com/davepeck/httreplay>`__
+which served me well for so long.
 
 .. _VCR.py: https://github.com/kevin1024/vcrpy
 .. _unittest: https://docs.python.org/2/library/unittest.html
+
+.. _@kevin1024: https://github.com/kevin1024
+.. _@IvanMalison: https://github.com/IvanMalison
+.. _@nedbat: https://github.com/nedbat
+.. _@davepeck: https://github.com/davepeck
+
 .. |Build Status| image:: https://travis-ci.org/agriffis/vcrpy-unittest.svg?branch=master
    :target: https://travis-ci.org/agriffis/vcrpy-unittest
 .. |Coverage Report| image:: https://coveralls.io/repos/agriffis/vcrpy-unittest/badge.svg?branch=master&service=github    :target: https://coveralls.io/github/agriffis/vcrpy-unittest?branch=master
