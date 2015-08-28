@@ -1,0 +1,7 @@
+# This file is for development and testing only.
+# Runtime requirements are in setup.py install_requirements.
+
+vcrpy
+pytest
+mock
+pudb
