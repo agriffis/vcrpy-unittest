@@ -10,7 +10,7 @@ Usage
 -----
 
 Inherit from ``VCRTestCase`` for automatic recording and playback of HTTP
-interactions. The cassette is available as ``self.cassette``:
+interactions.
 
 .. code:: python
 
@@ -20,8 +20,12 @@ interactions. The cassette is available as ``self.cassette``:
    class MyTestCase(VCRTestCase):
        def test_something(self):
            response = requests.get('http://example.com')
-           self.assertEqual(len(self.cassette), 1)
-           self.assertEqual(self.cassette.requests[0].uri, 'http://example.com')
+
+Similar to how VCR.py returns the cassette from the context manager,
+``VCRTestCase`` makes the cassette available as ``self.cassette``:
+
+    self.assertEqual(len(self.cassette), 1)
+    self.assertEqual(self.cassette.requests[0].uri, 'http://example.com')
 
 By default cassettes will be placed in the ``cassettes`` subdirectory next to the
 test, named according to the test class and method. For example, the above test
