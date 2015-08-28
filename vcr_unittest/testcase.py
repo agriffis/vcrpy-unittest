@@ -32,5 +32,5 @@ class VCRTestCase(unittest.TestCase):
         return os.path.join(testdir, 'cassettes')
 
     def _get_cassette_name(self):
-        return '{0}.{1}'.format(self.__class__.__name__,
-                                self._testMethodName)
+        return '{0}.{1}.yaml'.format(self.__class__.__name__,
+                                     self._testMethodName)
