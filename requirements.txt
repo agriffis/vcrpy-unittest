@@ -4,4 +4,3 @@
 vcrpy
 pytest
 mock
-pudb
