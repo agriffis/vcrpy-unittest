@@ -1,14 +1,14 @@
 vcrpy-unittest
 ==============
 
-This package provides `VCRTestCase` for simple integration between
+This package provides ``VCRTestCase`` for simple integration between
 `VCR.py`_ and Python's venerable unittest_.
 
 Usage
 -----
 
-Inherit from `VCRTestCase` for automatic recording and playback of HTTP
-interactions. The cassette is available as `self.cassette`:
+Inherit from ``VCRTestCase`` for automatic recording and playback of HTTP
+interactions. The cassette is available as ``self.cassette``:
 
 .. code:: python
 
@@ -21,21 +21,21 @@ interactions. The cassette is available as `self.cassette`:
            self.assertEqual(len(self.cassette), 1)
            self.assertEqual(self.cassette.requests[0].uri, 'http://example.com')
 
-By default cassettes will be placed in the `cassettes` subdirectory next to the
+By default cassettes will be placed in the ``cassettes`` subdirectory next to the
 test, named according to the test class and method. For example, the above test
-would read from and write to `cassettes/MyTestCase.test_something.yaml`
+would read from and write to ``cassettes/MyTestCase.test_something.yaml``
 
 The configuration can be modified by overriding methods on your subclass:
-`_get_vcr_kwargs`, `_get_cassette_library_dir` and `_get_cassette_name`. See
+``_get_vcr_kwargs``, ``_get_cassette_library_dir`` and ``_get_cassette_name``. See
 `the source <vcr_unittest/testcase.py>`__ for the default implementations, and
 `VCR.py`_ for more information.
 
 Compatibility
 -------------
 
-`VCRTestCase` supports a subset of the Python versions supported by VCR.py.
-Specifically Python 2.6 is excluded, because it lacks `TestCase.addCleanup`.
-Adding support for Python 2.6 would be pretty easy with `tearDown` but that
+``VCRTestCase`` supports a subset of the Python versions supported by VCR.py.
+Specifically Python 2.6 is excluded, because it lacks ``TestCase.addCleanup``.
+Adding support for Python 2.6 would be pretty easy with ``tearDown`` but that
 implementation is fragile because it depends on nothing else going wrong in the
 inheritance chain. Rather than take on this additional complexity, Python 2.6 is
 simply excluded for now.
