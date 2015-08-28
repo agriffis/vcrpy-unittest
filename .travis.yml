@@ -1,7 +1,12 @@
 language: python
-python:
-- 2.7
-- 3.3
-- 3.4
-- pypy
-script: py.test
+python: 2.7
+env:
+  global:
+    - COVERAGE_CMD="coverage run --append --source vcr_unittest,tests -m"
+    - COVERAGE_DEP=coverage
+install:
+  - pip install tox coveralls
+script:
+  - tox
+after_script:
+  - coveralls
