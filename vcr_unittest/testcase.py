@@ -16,16 +16,16 @@ class VCRTestCase(unittest.TestCase):
     def setUp(self):
         super(VCRTestCase, self).setUp()
         if self.vcr_enabled:
-            myvcr = vcr.VCR(**self._get_vcr_kwargs())
-            name = self._get_cassette_name()
-            cm = myvcr.use_cassette(name)
+            kwargs = self._get_vcr_kwargs()
+            if 'cassette_library_dir' not in kwargs:
+                kwargs['cassette_library_dir'] = self._get_cassette_library_dir()
+            myvcr = vcr.VCR(**kwargs)
+            cm = myvcr.use_cassette(self._get_cassette_name())
             self.cassette = cm.__enter__()
             self.addCleanup(cm.__exit__, None, None, None)
 
     def _get_vcr_kwargs(self):
-        return dict(
-            cassette_library_dir=self._get_cassette_library_dir(),
-        )
+        return {}
 
     def _get_cassette_library_dir(self):
         testdir = os.path.dirname(inspect.getfile(self.__class__))
