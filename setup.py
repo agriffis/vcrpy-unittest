@@ -13,7 +13,7 @@ with open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='vcrpy-unittest',
-    version='0.1.2',
+    version='0.1.3',
     description='Python unittest integration for vcr.py',
     long_description=long_description,
     url='https://github.com/agriffis/vcrpy-unittest',
