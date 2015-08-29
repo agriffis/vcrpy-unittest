@@ -85,5 +85,6 @@ which served me well for so long.
 .. _@davepeck: https://github.com/davepeck
 
 .. |Build Status| image:: https://travis-ci.org/agriffis/vcrpy-unittest.svg?branch=master
-   :target: https://travis-ci.org/agriffis/vcrpy-unittest
-.. |Coverage Report| image:: https://coveralls.io/repos/agriffis/vcrpy-unittest/badge.svg?branch=master&service=github    :target: https://coveralls.io/github/agriffis/vcrpy-unittest?branch=master
+   :target: https://travis-ci.org/agriffis/vcrpy-unittest?branch=master
+.. |Coverage Report| image:: https://img.shields.io/coveralls/agriffis/vcrpy-unittest/master.svg
+   :target: https://coveralls.io/github/agriffis/vcrpy-unittest?branch=master
