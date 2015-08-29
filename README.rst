@@ -90,5 +90,5 @@ which served me well for so long.
    :target: https://coveralls.io/github/agriffis/vcrpy-unittest?branch=master
 .. |PyPI| image:: https://img.shields.io/pypi/v/vcrpy-unittest.svg?style=plastic
    :target: PyPI_
-.. |Gitter| image:: https://img.shields.io/badge/GITTER-join%20chat-green.svg?style=plastic
+.. |Gitter| image:: https://img.shields.io/badge/GITTER-join%20chat%20→-green.svg?style=plastic
    :target: https://gitter.im/kevin1024/vcrpy
