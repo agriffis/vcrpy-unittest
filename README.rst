@@ -84,11 +84,11 @@ which served me well for so long.
 .. _@nedbat: https://github.com/nedbat
 .. _@davepeck: https://github.com/davepeck
 
-.. |Build Status| image:: https://img.shields.io/travis/agriffis/vcrpy-unittest/master.svg
+.. |Build Status| image:: https://img.shields.io/travis/agriffis/vcrpy-unittest/master.svg?style=plastic
    :target: https://travis-ci.org/agriffis/vcrpy-unittest?branch=master
-.. |Coverage Report| image:: https://img.shields.io/coveralls/agriffis/vcrpy-unittest/master.svg
+.. |Coverage Report| image:: https://img.shields.io/coveralls/agriffis/vcrpy-unittest/master.svg?style=plastic
    :target: https://coveralls.io/github/agriffis/vcrpy-unittest?branch=master
-.. |PyPI| image:: https://img.shields.io/pypi/v/vcrpy-unittest.svg
+.. |PyPI| image:: https://img.shields.io/pypi/v/vcrpy-unittest.svg?style=plastic
    :target: PyPI_
-.. |Gitter| image:: https://img.shields.io/badge/GITTER-join%20chat-green.svg
+.. |Gitter| image:: https://img.shields.io/badge/GITTER-join%20chat-green.svg?style=plastic
    :target: https://gitter.im/kevin1024/vcrpy
