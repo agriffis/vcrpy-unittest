@@ -44,8 +44,9 @@ would read from and write to ``cassettes/MyTestCase.test_something.yaml``
 
 The configuration can be modified by overriding methods on your subclass:
 ``_get_vcr_kwargs``, ``_get_cassette_library_dir`` and ``_get_cassette_name``. See
-`the source <vcr_unittest/testcase.py>`__ for the default implementations, and
-`VCR.py`_ for more information.
+`the source
+<https://github.com/agriffis/vcrpy-unittest/blob/master/vcr_unittest/testcase.py>`__
+for the default implementations, and `VCR.py`_ for more information.
 
 Compatibility
 -------------
@@ -61,7 +62,8 @@ License
 -------
 
 This library uses the MIT license, which is the same as VCR.py. See `LICENSE.txt
-<LICENSE.txt>`__ for more details.
+<https://github.com/agriffis/vcrpy-unittest/blob/master/LICENSE.txt>`__ for more
+details.
 
 Acknowledgements
 ----------------
