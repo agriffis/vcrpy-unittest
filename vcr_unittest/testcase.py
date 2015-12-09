@@ -24,8 +24,8 @@ class VCRTestCase(unittest.TestCase):
             self.cassette = cm.__enter__()
             self.addCleanup(cm.__exit__, None, None, None)
 
-    def _get_vcr_kwargs(self):
-        return {}
+    def _get_vcr_kwargs(self, **kwargs):
+        return kwargs
 
     def _get_cassette_library_dir(self):
         testdir = os.path.dirname(inspect.getfile(self.__class__))

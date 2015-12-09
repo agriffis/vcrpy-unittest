@@ -66,13 +66,27 @@ def test_cassette_name():
     assert os.path.basename(test.cassette._path) == 'my-custom-name'
 
 
-def test_vcr_kwargs():
+def test_vcr_kwargs_overridden():
 
     class MyTest(VCRTestCase):
         def test_foo(self):
             pass
         def _get_vcr_kwargs(self):
-            return dict(
+            kwargs = super(MyTest, self)._get_vcr_kwargs()
+            kwargs['record_mode'] = 'new_episodes'
+            return kwargs
+
+    test = run_testcase(MyTest)[0][0]
+    assert test.cassette.record_mode == 'new_episodes'
+
+
+def test_vcr_kwargs_passed():
+
+    class MyTest(VCRTestCase):
+        def test_foo(self):
+            pass
+        def _get_vcr_kwargs(self):
+            return super(MyTest, self)._get_vcr_kwargs(
                 record_mode='new_episodes',
             )
 
