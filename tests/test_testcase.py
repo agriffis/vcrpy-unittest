@@ -125,6 +125,35 @@ def test_vcr_kwargs_cassette_dir():
     assert test._get_cassette_library_dir.call_count == 0
 
 
+def test_get_vcr_with_matcher(tmpdir):
+    cassette_dir = tmpdir.mkdir('cassettes')
+    assert len(cassette_dir.listdir()) == 0
+
+    mock_matcher = Mock(return_value=True)
+
+    class MyTest(VCRTestCase):
+        def test_foo(self):
+            self.response = urlopen('http://example.com').read()
+        def _get_vcr(self):
+            myvcr = super(MyTest, self)._get_vcr()
+            myvcr.register_matcher('mymatcher', mock_matcher)
+            myvcr.match_on = ['mymatcher']
+            return myvcr
+        def _get_cassette_library_dir(self):
+            return str(cassette_dir)
+
+    # First run to fill cassette.
+    test = run_testcase(MyTest)[0][0]
+    assert len(test.cassette.requests) == 1
+    assert not mock_matcher.called  # nothing in cassette
+
+    # Second run to call matcher.
+    test = run_testcase(MyTest)[0][0]
+    assert len(test.cassette.requests) == 1
+    assert mock_matcher.called
+    assert repr(mock_matcher.mock_calls[0]) == 'call(<Request (GET) http://example.com>, <Request (GET) http://example.com>)'
+
+
 def test_testcase_playback(tmpdir):
     cassette_dir = tmpdir.mkdir('cassettes')
     assert len(cassette_dir.listdir()) == 0

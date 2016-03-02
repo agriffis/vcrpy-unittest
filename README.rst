@@ -43,10 +43,25 @@ test, named according to the test class and method. For example, the above test
 would read from and write to ``cassettes/MyTestCase.test_something.yaml``
 
 The configuration can be modified by overriding methods on your subclass:
-``_get_vcr_kwargs``, ``_get_cassette_library_dir`` and ``_get_cassette_name``. See
+``_get_vcr_kwargs``, ``_get_cassette_library_dir`` and ``_get_cassette_name``.
+To modify the ``VCR`` object after instantiation, for example to add a matcher,
+you can hook on ``_get_vcr``, for example:
+
+.. code:: python
+
+    class MyTestCase(VCRTestCase):
+        def _get_vcr(self, **kwargs):
+            myvcr = super(MyTestCase, self)._get_vcr(**kwargs)
+            myvcr.register_matcher('mymatcher', mymatcher)
+            myvcr.match_on = ['mymatcher']
+            return myvcr
+
+See
 `the source
 <https://github.com/agriffis/vcrpy-unittest/blob/master/vcr_unittest/testcase.py>`__
-for the default implementations, and `VCR.py`_ for more information.
+for the default implementations of these methods, and `VCR.py`_ for more
+information.
+
 
 Compatibility
 -------------
