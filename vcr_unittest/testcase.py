@@ -10,11 +10,12 @@ import vcr
 logger = logging.getLogger(__name__)
 
 
-class VCRTestCase(unittest.TestCase):
+class VCRMixin(object):
+    """A TestCase mixin that provides VCR integration."""
     vcr_enabled = True
 
     def setUp(self):
-        super(VCRTestCase, self).setUp()
+        super(VCRMixin, self).setUp()
         if self.vcr_enabled:
             kwargs = self._get_vcr_kwargs()
             myvcr = self._get_vcr(**kwargs)
@@ -37,3 +38,7 @@ class VCRTestCase(unittest.TestCase):
     def _get_cassette_name(self):
         return '{0}.{1}.yaml'.format(self.__class__.__name__,
                                      self._testMethodName)
+
+
+class VCRTestCase(VCRMixin, unittest.TestCase):
+    pass
