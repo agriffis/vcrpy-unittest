@@ -23,10 +23,10 @@ interactions.
 
 .. code:: python
 
-   from vcr_unittest import VCRTestCase
-   import requests
+    from vcr_unittest import VCRTestCase
+    import requests
 
-   class MyTestCase(VCRTestCase):
+    class MyTestCase(VCRTestCase):
        def test_something(self):
            response = requests.get('http://example.com')
 
@@ -62,6 +62,25 @@ See
 for the default implementations of these methods, and `VCR.py`_ for more
 information.
 
+VCRMixin
+~~~~~~~~
+
+In case inheriting from ``VCRTestCase`` is difficult because of an existing
+class hierarchy containing tests in the base classes, inherit from ``VCRMixin``
+instead.
+
+.. code:: python
+
+    from vcr_unittest import VCRMixin
+    import requests
+    import unittest
+
+    class MyTestMixin(VCRMixin):
+       def test_something(self):
+           response = requests.get(self.url)
+
+    class MyTestCase(MyTestMixin, unittest.TestCase):
+        url = 'http://example.com'
 
 Compatibility
 -------------
