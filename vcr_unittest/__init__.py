@@ -1,1 +1,1 @@
-from .testcase import VCRTestCase
+from .testcase import VCRMixin, VCRTestCase
