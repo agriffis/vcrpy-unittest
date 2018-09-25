@@ -83,16 +83,6 @@ instead.
     class MyTestCase(MyTestMixin, unittest.TestCase):
         url = 'http://example.com'
 
-Compatibility
--------------
-
-``VCRTestCase`` supports a subset of the Python versions supported by VCR.py.
-Specifically Python 2.6 is excluded, because it lacks ``TestCase.addCleanup``.
-Adding support for Python 2.6 would be pretty easy with ``tearDown`` but that
-implementation is fragile because it depends on nothing else going wrong in the
-inheritance chain. Rather than take on this additional complexity, Python 2.6 is
-simply excluded for now.
-
 License
 -------
 
