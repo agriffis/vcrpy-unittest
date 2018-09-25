@@ -1,6 +1,3 @@
-"""vcrpy-unittest setup module based on
-https://github.com/pypa/sampleproject
-"""
 from __future__ import absolute_import, unicode_literals
 
 from setuptools import setup, find_packages
@@ -13,17 +10,17 @@ with open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='vcrpy-unittest',
-    version='0.1.6',
+    version='0.1.7',
     description='Python unittest integration for vcr.py',
     long_description=long_description,
     url='https://github.com/agriffis/vcrpy-unittest',
     author='Aron Griffis',
-    author_email='aron@arongriffis.com',
+    author_email='aron@scampersand.com',
     license='MIT',
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: MIT License',
