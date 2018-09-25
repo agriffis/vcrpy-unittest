@@ -122,8 +122,8 @@ which served me well for so long.
 .. |Build Status| image:: https://img.shields.io/travis/agriffis/vcrpy-unittest/master.svg?style=plastic
    :target: https://travis-ci.org/agriffis/vcrpy-unittest?branch=master
 
-.. |Coverage Report| image:: https://img.shields.io/coveralls/agriffis/vcrpy-unittest/master.svg?style=plastic
-   :target: https://coveralls.io/github/agriffis/vcrpy-unittest?branch=master
+.. |Coverage Report| image:: https://img.shields.io/codecov/c/github/agriffis/vcrpy-unittest/master.svg?style=plastic
+   :target: https://codecov.io/gh/agriffis/vcrpy-unittest/branch/master
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/vcrpy-unittest.svg?style=plastic
    :target: PyPI_

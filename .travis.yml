@@ -27,10 +27,10 @@ install:
   # https://github.com/ryanhiebert/tox-travis/issues/26
   - pip install tox
   - pip install tox-travis
-  - pip install coveralls
+  - pip install codecov
 
 script:
   - tox
 
 after_script:
-  - coveralls
+  - codecov
